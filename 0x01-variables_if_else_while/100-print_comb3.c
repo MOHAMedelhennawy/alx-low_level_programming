@@ -8,7 +8,7 @@
 int main(void)
 {
 	int i;
-	
+
 	for (i = 1; i < 90; i++)
 	{
 		if (i < 10)
@@ -17,7 +17,7 @@ int main(void)
 		}
 		else
 		{
-			if (i % 10 == (i % 10)*10+(i % 10) || i % 10 == 0)
+			if (i  == (i % 10) * 10 + (i % 10) || i % 10 == 0)
 				continue;
 			else
 				printf("%d", i);
