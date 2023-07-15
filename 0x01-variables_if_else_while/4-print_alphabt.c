@@ -15,5 +15,5 @@ int main(void)
                         continue;
                 else
                         putchar(ch);
-        }       
+        }
 }
