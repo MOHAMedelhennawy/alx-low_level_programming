@@ -25,4 +25,5 @@ int main(void)
 		if (i < 89)
 			printf(", ");
 	}
+	return (0);
 }
