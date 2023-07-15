@@ -1,28 +1,29 @@
 #include <stdio.h>
 
 /**
- * main - prints the alphabet in lowercase,
- * followed by a new line
- * Return: Always 0 (Success)
+ * main - prints all possible different combinations of two digits
+ * Return: ALways 0 (Success)
  */
 int main(void)
 {
-	int i;
+	int n, m;
 
-	for (i = 1; i < 90; i++)
+	for (n = 48; n <= 56; n++)
 	{
-		if (i < 10)
+		for (m = 49; m <= 57; m++)
 		{
-			printf("0%d", i);
+			if (m > n)
+			{
+				putchar(n);
+				putchar(m);
+				if (n != 56 || m != 57)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
 		}
-		else
-		{
-			if (i % 10 == 0)
-				i += (i / 10) + 1;
-				printf("%d", i);
-		}
-		if (i < 89)
-			printf(", ");
 	}
+	putchar('\n');
 	return (0);
 }
