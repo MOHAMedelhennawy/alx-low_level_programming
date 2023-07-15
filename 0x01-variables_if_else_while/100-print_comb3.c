@@ -18,7 +18,7 @@ int main(void)
 		else
 		{
 			if (i % 10 == 0)
-				i + =(i / 10) + 1;
+				i + = (i / 10) + 1;
 				printf("%d", i);
 		}
 		if (i < 89)
