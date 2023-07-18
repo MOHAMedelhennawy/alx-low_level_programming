@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * main - check the code
- *
+ * -isalpha - check the code
+ * check if input is char or anything else
  * Return: Always
  */
 int _isalpha(int c)
