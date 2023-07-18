@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * print_sign - function to check if n = or < or > 0
- * if n = 0 return 0
- * if n < 0 retrun -1
- * if n > 0 retrun 1 
+ * print_sign - Determines whether an integer is positive, negative or zero.
+ * @n: the number to be checked.
+ * Return: 1 if positive, 0 if zero, -1 if negative, / if not a digit.
  */
 int print_sign(int n)
 {
