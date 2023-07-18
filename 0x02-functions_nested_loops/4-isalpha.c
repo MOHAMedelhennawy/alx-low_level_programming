@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * -isalpha - check the code
- * check if input is char or anything else
- * Return: Always
+ * _isalpha - tests whether a character is from the English alphabet.
+ * @c: character to be checked.
+ * Return: 1 if the character is an English character.
+ * 0 if the character is not an English character.
  */
 int _isalpha(int c)
 {
