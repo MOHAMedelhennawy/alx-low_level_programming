@@ -1,4 +1,4 @@
-#include "main.ih"
+#include "main.h"
 
 /**
  * print_sign - function to check if n = or < or > 0
