@@ -3,7 +3,7 @@
 /**
  * main - check the code
  *
- * Return: Always 
+ * Return: Always
  */
 int _isalpha(int c)
 {
