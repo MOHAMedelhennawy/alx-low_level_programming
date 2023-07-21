@@ -5,24 +5,20 @@
  * print_number - print an int numbers.
  * @n: number tested
  * Return: Always 0.
+ *
  */
 
 void print_number(int n)
 {
-	unsigned int dig, rev = 0, rev2 = 0;
+	unsigned int num = n;
 
-	while (n != 0)
+	if (n < 0)
 	{
-		dig = n % 10;
-		rev = (rev * 10) + dig;
-		n /= 10;
+		_putchar('-');
+		num = -num;
 	}
 
-	while (rev != 0)
-	{
-		dig = rev % 10;
-		rev2 = (rev2 * 10) + dig;
-		rev /= 10;
-	}
-	printf("%d", rev2);
+	if (num / 10 > 0)
+		print_number(num / 10);
+	_putchar((num % 10) + '0');
 }
