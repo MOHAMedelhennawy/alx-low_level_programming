@@ -9,7 +9,7 @@
 
 void print_number(int n)
 {
-	int dig, rev = 0, rev2 = 0;
+	unsigned int dig, rev = 0, rev2 = 0;
 
 	while (n != 0)
 	{
