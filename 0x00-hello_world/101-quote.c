@@ -5,16 +5,16 @@
  *
  * Return: Always 1.
  */
-int main() 
+int main(void)
 {
-	while (!printf( "and that piece of art is useful" ))
+	while (!printf ( "and that piece of art is useful" ) )
+	{ }
+
+	while(!printf (" - Dora Korpar, 2015-10-19") )
 	{ }
 	
-	while(!printf(" - Dora Korpar, 2015-10-19"))
+	while(!printf ("\n") )
 	{ }
-	
-	while(!printf("\n"))
-	{ }
-	
-	return 0;
+
+	return (0);
 }
