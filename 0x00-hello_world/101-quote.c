@@ -7,9 +7,14 @@
  */
 int main() 
 {
-	write(1, "and that piece of art is useful", 31);
-	write(1, " - Dora Korpar, 2015-10-19\n", 27);
-
-
+	while (!printf( "and that piece of art is useful" ))
+	{ }
+	
+	while(!printf(" - Dora Korpar, 2015-10-19"))
+	{ }
+	
+	while(!printf("\n"))
+	{ }
+	
 	return 0;
 }
