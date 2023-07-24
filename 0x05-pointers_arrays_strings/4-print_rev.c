@@ -1,13 +1,19 @@
 #include "main.h"
-#include <string.h>
+
 /**
  * print_rev - prints in reverse a string.
  * @s: tested string
- * Return: always 0.
+ * Return: always 0
+ * .
  */
 void print_rev(char *s)
 {
-	int i = strlen(s) - 1;
+	int i = 0;
+       	
+	while (*(s + i) != '\0')
+		i++;
+
+	i -= 1;
 
 	while (i != -1)
 	{
