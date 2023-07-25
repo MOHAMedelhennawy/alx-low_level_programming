@@ -13,7 +13,7 @@ void puts2(char *str)
 
 	for (i = 0; i < l; i++)
 	{
-		putchar(*ch);
+		_putchar(*ch);
 		ch++;
 	}
 }
