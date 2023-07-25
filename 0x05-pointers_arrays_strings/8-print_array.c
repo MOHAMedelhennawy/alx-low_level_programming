@@ -20,3 +20,4 @@ void print_array(int *a, int n)
 		else
 			printf("\n");
 	}
+}
