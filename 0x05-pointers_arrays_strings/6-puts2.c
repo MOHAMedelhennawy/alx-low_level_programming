@@ -5,7 +5,7 @@
  * followed by a new line
  * @str: string to be printed
  */
-void puts_half(char *str)
+void puts2(char *str)
 {
 	int len, n, i;
 
