@@ -7,10 +7,10 @@ void reverse_array(int *a, int n)
 
 	if (n % 2 == 0)
 		n = n / 2;
-	else 
+	else
 		n = (n / 2) - 1;
 
-	for (i = 0; i < n / 2; i++ , end--)
+	for (i = 0; i < n / 2; i++, end--)
 	{
 		tmp = a[i];
 		a[i] = a[end];
