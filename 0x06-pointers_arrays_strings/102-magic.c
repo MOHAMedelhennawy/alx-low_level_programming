@@ -1,7 +1,9 @@
 #include <stdio.h>
-/*
- * @p: is a poniter that ponit to @n
- * @a: a is a array
+/**
+ * main - check the code
+ *
+ * we should to change val of a[2] whitout any change in source code
+ * Return: Always 0.
  */
 int main(void)
 {
