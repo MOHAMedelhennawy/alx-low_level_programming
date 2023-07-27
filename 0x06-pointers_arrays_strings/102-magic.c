@@ -1,5 +1,8 @@
 #include <stdio.h>
-
+/*
+ * @p: is a poniter that ponit to @n
+ * @a: a is a array
+ */
 int main(void)
 {
 	int n;
