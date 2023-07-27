@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int n;
+	int n = 2;
 	int a[5];
 	int *p;
 
