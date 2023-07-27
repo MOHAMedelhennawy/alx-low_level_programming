@@ -11,9 +11,10 @@ char *cap_string(char *s)
 		{
 			if (s[i] == a[j] && (s[i + 1] >= 'a' && s[i + 1] <= 'z'))
 			{
-			s[i + 1] -= 2;
+			s[i + 1] -= 32;
 			}
 		}
 	}
+
 	return (s);
 }
