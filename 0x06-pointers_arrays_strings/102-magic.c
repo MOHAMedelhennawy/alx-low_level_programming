@@ -1,10 +1,5 @@
 #include <stdio.h>
-/**
- * main - check the code
- *
- * we should to change val of a[2] whitout any change in source code
- * Return: Always 0.
- */
+
 int main(void)
 {
 	int n;
