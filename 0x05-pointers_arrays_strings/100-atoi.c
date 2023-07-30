@@ -7,29 +7,22 @@
  */
 int _atoi(char *s)
 {
-	int i, arr[50], j = 0, count = 0, sum = 0;
+	int count = 0, sign = 1, n = 0, i = 0;
 
-	for (i = 0; i < s[i]; i++)
-	{
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			arr[j] = s[i] - '0';
-			j++;
-		}
-
+	while (s[i] != '\0')
 		if (s[i] == '-')
 			count++;
-	}
-
-
-	for (i = 0; i < j; i++)
-	{
-		sum = sum + arr[i];
-		sum *= 10;
-	}
 
 	if (count % 2 != 0)
-		printf("-");
+		sign = -1;
 
-	return (sum / 10);
-}
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+			n = n * 10 + (s[i] - '0');
+
+		if (s[i] >= '0' && s[i] <= '9' && (s[i + 1] < '0' || s[i + 1] < '9'))
+				break;
+	}
+
+	return (sign * n);
