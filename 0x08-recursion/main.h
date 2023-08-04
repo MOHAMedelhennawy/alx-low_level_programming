@@ -9,3 +9,5 @@ int is_prime_number(int n);
 int pal(char *s, int i, int len);
 int sqrt_manual(int n, int i);
 int is_prime_manual(int n, int i);
+int sqroot(int n, int i);
+int _sqrt_recursion(int n);
