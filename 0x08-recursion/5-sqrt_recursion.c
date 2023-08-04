@@ -34,7 +34,5 @@ int sqroot(int n, int i)
 	else if (i == n / 2)
 		return (-1);
 
-	sqroot(n, i + 1);
-	
-	return (0);
+	return (sqroot(n, i + 1));
 }
