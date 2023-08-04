@@ -35,4 +35,6 @@ int sqroot(int n, int i)
 		return (-1);
 
 	sqroot(n, i + 1);
+	
+	return (0);
 }
