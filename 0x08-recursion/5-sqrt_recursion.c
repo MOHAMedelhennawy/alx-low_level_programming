@@ -20,7 +20,7 @@ int _sqrt_recursion(int n)
 
 }
 /**
- * sqrt_manual - calculate manualy the sqrt of a number.
+ * sqroot- calculate manualy the sqrt of a number.
  * @n: natural number
  * @i: counter or number to be multiplied.
  *
