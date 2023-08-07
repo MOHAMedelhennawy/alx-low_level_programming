@@ -10,15 +10,12 @@ int main(int argc, char *argv[])
 {
 	int i, multi = 1;
 
-	if (argc > 1)
-	{
-		for (i = 1; i < argc; i++)
+	for (i = 1; i < argc; i++)
 		multi *= atoi(argv[i]);
-	}
 
-	else
-		printf("Error");
-
-	printf("%d\n", multi);
+	if (argc > 1)
+		printf("%d\n", multi);
+	else 
+		printf("Error\n");
 	return (0);
 }
