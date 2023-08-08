@@ -1,3 +1,11 @@
+#include <stdlib.h>
+/**
+ * create_array - creates an array of chars.
+ * @size: size of the array.
+ * @c: char for initialized the array.
+ *
+ * Return: the string initialized.
+ */
 char *create_array(unsigned int size, char c)
 {
     unsigned int i;
