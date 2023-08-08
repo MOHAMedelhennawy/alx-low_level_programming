@@ -21,13 +21,13 @@ char *str_concat(char *s1, char *s2)
 	if (ptr == NULL)
 		return (NULL);
 
-	while (*(s1 + i) != NULL)
+	while ((s1 + i) != NULL)
 	{
 		*(ptr + i) = *(s1 + i);
 		i++;
 	}
 
-	while (*(s2 + i) ! = NULL)
+	while ((s2 + i) != NULL)
 	{
 		*(ptr + i) = *(s2 + i);
 		i++;
