@@ -11,9 +11,9 @@ char *str_concat(char *s1, char *s2)
 {
 	char *ptr;
 	int sum, i = 0;
+
 	sum = strlen(s1) + strlen(s2);
 	ptr = (char *)malloc(sum);
-
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
@@ -21,14 +21,14 @@ char *str_concat(char *s1, char *s2)
 	if (ptr == NULL)
 		return (NULL);
 
-	while(*s1)
+	while (*s1)
 	{
 		*(ptr + i) = *s1;
 		s1++;
 		i++;
-	} 
+	}
 
-	while(*s2)
+	while (*s2)
 	{
 		*(ptr + i) = *s2;
 		s2++;
