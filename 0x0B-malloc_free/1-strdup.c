@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 /**
  * _strdup- copy a string.
  * @str: string to be copied.
@@ -9,15 +10,12 @@
  */
 char *_strdup(char *str)
 {
-	int size = 0, i;
+	int size = strlen(str)+ 1, i;
 	char *ptr;
 
 	if (str == NULL)
 		return (NULL);
 
-	while (*(str + size))
-		size++;
-	size++;
 	ptr = malloc(sizeof(char) * size);
 	if (ptr == NULL)
 		return (0);
