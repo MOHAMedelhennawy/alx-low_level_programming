@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 char *argstostr(int ac, char **av)
-{  
+{
 	char *array;
 	int i, j, z = 0, n = 0;
 
@@ -16,7 +16,7 @@ char *argstostr(int ac, char **av)
 		}
 	}
 
-	array = (char *)malloc(n + ac + 1 *(sizeof(char)));
+	array = (char *)malloc(n + ac + 1 * (sizeof(char)));
 	if (array == NULL)
 		return (NULL);
 
