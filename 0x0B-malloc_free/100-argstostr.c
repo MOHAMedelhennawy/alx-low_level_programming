@@ -1,5 +1,11 @@
 #include <stdlib.h>
 #include <string.h>
+/**
+ * argstostr - concatenates all the arguments of your program
+ *@ac: number of arguments
+ *@av: arguments
+ * Return: a pointer to a new string
+ */
 char *argstostr(int ac, char **av)
 {
 	char *array;
