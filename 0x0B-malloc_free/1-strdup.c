@@ -10,13 +10,16 @@
  */
 char *_strdup(char *str)
 {
-	int size = strlen(str), i;
+	int size = 0, i;
 	char *ptr;
 
 	if (str == NULL)
 		return (NULL);
 
-	ptr = (char *)malloc(sizeof(char) * size);
+	whlie (*(str + size))
+		size++;
+	size++;
+	ptr = (char *)malloc(sizeof(char) * (size + 1));
 	if (ptr == NULL)
 		return (NULL);
 
@@ -24,5 +27,6 @@ char *_strdup(char *str)
 	{
 		*(ptr + i) = *(str + i);
 	}
+	*(ptr + i) = '\0';
 	return (ptr);
 }
