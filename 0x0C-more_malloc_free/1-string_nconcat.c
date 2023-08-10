@@ -1,5 +1,11 @@
 #include <stdlib.h>
-
+/**
+ * string_nconcat- concatenate 2 strings, the size of 2nd string is defined.
+ * @s1: string 1.
+ * @s2: string 2, concatenated to 1
+ * @n: size of s2 concatenated
+ * Return: pointer to the concatenated string.
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	int i, len = 0, k = 0;
