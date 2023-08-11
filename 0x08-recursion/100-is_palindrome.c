@@ -1,10 +1,10 @@
 #include <string.h>
 /**
- * s_len - calculates the length of a string.
- * @s: original string
- *
- *
- * Return: length of string.
+ * check - check if a string is a palindrome.
+ * @start: original string
+ * @left: to point to start of string
+ * @right: to point to end of string
+ * Return: 1 if is palindrome otherwise 0.
  */
 int check(char *start, int left, int right)
 {
@@ -17,6 +17,13 @@ int check(char *start, int left, int right)
 	else
 		return (0);
 }
+/**
+ * is_palindrome - check if the string is a palindrome ex ala.
+ * @s: original string
+ *
+ *
+ * Return: 1 if is alindrome otherwise 0.
+ */
 int is_palindrome(char *s)
 {
 	int len = strlen(s);
