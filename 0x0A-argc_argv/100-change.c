@@ -18,7 +18,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 		return (1);
 	}
 
-	if (*argv[1] <= 0)
+	if (sum <= 0)
 		printf("0\n");
 
 	while (sum > 0)
