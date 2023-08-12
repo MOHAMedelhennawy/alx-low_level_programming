@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int sum = atoi(argv[1]);
+	int sum;
 	int count = 0;
 
 	if (argc != 2)
@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
+	sum = atoi(argv[1]);
 	while (sum > 0)
 	{
 		if (sum >= 25)
