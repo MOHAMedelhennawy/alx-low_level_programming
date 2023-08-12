@@ -18,26 +18,28 @@ int main(int argc __attribute__((unused)), char *argv[])
 		return (1);
 	}
 
-	if (sum <= 0)
+	else if (*argv[1] <= 0)
 		printf("0\n");
-
-	while (sum > 0)
+	else
 	{
-		if (sum >= 25)
-			sum -= 25;
+		while (sum > 0)
+		{
+			if (sum >= 25)
+				sum -= 25;
 
-		else if (sum >= 10 && sum < 25)
-			sum -= 10;
+			else if (sum >= 10 && sum < 25)
+				sum -= 10;
 
-		else if (sum >= 5 && sum < 10)
-			sum -= 5;
+			else if (sum >= 5 && sum < 10)
+				sum -= 5;
 
-		else if (sum >= 2 && sum < 5)
-			sum -= 2;
-		else
-			sum -= 1;
+			else if (sum >= 2 && sum < 5)
+				sum -= 2;
+			else
+				sum -= 1;
 
-		count++;
+			count++;
+		}
 	}
 
 	printf("%d\n", count);
