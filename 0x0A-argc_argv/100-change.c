@@ -1,10 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+ * main - returns the min numbers of coins per given ammount of money.
+ * @argc: argument count or size of arguments.
+ * @argv: argument vector
+ *
+ * Return: 0 success 1 failure.
+ */
 int main(int argc __attribute__((unused)), char *argv[])
 {
 	int sum = atoi(argv[1]);
 	int count = 0;
+
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
 
 	while (sum > 0)
 	{
@@ -25,6 +37,6 @@ int main(int argc __attribute__((unused)), char *argv[])
 		count++;
 	}
 
-	printf("%d\n",count);
+	printf("%d\n", count);
 	return (0);
 }
