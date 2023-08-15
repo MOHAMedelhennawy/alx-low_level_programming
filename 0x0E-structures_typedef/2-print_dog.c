@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "dog.h"
 /**
  * print_dog - to print element of struct
@@ -12,15 +13,15 @@ void print_dog(struct dog *d)
 	if (!d->name)
 		printf("Name: (nil)\n");
 	else
-		printf("Name: %d\n", b->name);
+		printf("Name: %d\n", d->name);
 
 	if (!d->age)
 		printf("Age: (nil)\n");
 	else
-		printf("Age: %d\n", b->age);
+		printf("Age: %d\n", d->age);
 
 	if (!d->owner)
 		printf("Owner: (nil)\n");
 	else
-		printf("Oge: %d\n", b->Owner);
+		printf("Oge: %d\n", d->Owner);
 }
