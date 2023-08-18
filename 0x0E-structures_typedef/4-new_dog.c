@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "dog.h"
 /**
  * new_dog - creates a new dog.
  * @name: dog's name
@@ -10,37 +11,35 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int n1, n2, i;
-	struct dog_t *new;
+	dog_t *ptr;
+	int namelen, ownerlen, i;
 
-	if (name != NULL && owner != NULL)
+	ptr = malloc(sizeof(struct dog));
+	if (!ptr)
+		return (NULL);
+	namelen = strlen(name);
+	ownerlen = strlen(owner);
+
+	ptr->name = malloc(sizeof(char) * namelen);
+	if (!ptr->name)
 	{
-		n1 = strlen(name);
-		n2 = strlen(owner);
-
-		new = malloc(sizeof(dog_t));
-		if (new == NULL)
-			return (NULL);
-
-		new->name = malloc(n1 * sizeof(char));
-		if (new->name == NULL)
-		{
-			free(new);
-			return (NULL);
-		}
-
-		new->owner = malloc(n2 * sizeof(char));
-		if (new->owner == NULL)
-		{
-			free(new->name);
-			free(new);
-			return (NULL);
-		}
-
-		for (i = 0; i < n1; i++)
-			*(new->name + i) = *(name + i);
-		for (i = 0; i < n2; i++)
-			*(new->owner + i) = *(owner + i);
-		return (new);
+		free(ptr);
+		return (NULL);
 	}
+	for (i = 0; i < namelen; i++)
+		*(ptr->name + i) = *(name + i);
+
+	ptr->age = age;
+
+	ptr->owner = malloc(sizeof(char) * ownerlen);
+	if (!ptr->owner)
+	{
+		free(ptr->name);
+		free(ptr);
+		return (NULL);
+	}
+	for (i = 0; i < ownerlen; i++)
+		*(ptr->owner + i) = *(owner + i);
+
+	return (ptr);
 }
