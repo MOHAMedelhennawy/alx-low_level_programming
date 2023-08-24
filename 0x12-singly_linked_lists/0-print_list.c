@@ -1,5 +1,9 @@
 #include "lists.h"
-
+/**
+ * print_list - to access the data of a node and print them
+ * @h: pointer to the list address
+ * Return: the number of nodes
+ */
 size_t print_list(const list_t *h)
 {
 	size_t count = 0;
