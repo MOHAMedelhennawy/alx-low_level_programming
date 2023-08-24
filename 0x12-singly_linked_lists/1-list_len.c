@@ -2,6 +2,7 @@
 /**
  * list_len - to count the number of nodes
  * @h: pointer to the list address
+ * Return: number of nodes
  */
 size_t list_len(const list_t *h)
 {
