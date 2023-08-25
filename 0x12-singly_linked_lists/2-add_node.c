@@ -1,4 +1,9 @@
 #include "lists.h"
+/**
+ * _strlen - to get length of a string
+ * @s: origin string
+ * Return: length of string
+ */
 unsigned int _strlen(const char *s)
 {
 	unsigned int len = 0;
@@ -7,6 +12,12 @@ unsigned int _strlen(const char *s)
 		len++;
 	return (len);
 }
+/**
+ * add_node - adds a node.
+ * @head: head of nodes address
+ * @str: pointer to string
+ * Return: address of node
+ */
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new;
