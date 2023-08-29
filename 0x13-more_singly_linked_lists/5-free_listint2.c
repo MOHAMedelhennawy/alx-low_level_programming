@@ -1,22 +1,25 @@
 #include "lists.h"
 /**
- * free_listint2 - destroy nodes.
- * @head: pointer to head pointer
+ * free_listint2 - free memory of all list.
+ * @head: pointer to head in function
+ * Return: Always success.
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *next, *current = *head;
-	
+	listint_t *current;
+	listint_t *next;
+
 	if (head == NULL)
 		return;
 	if (*head == NULL)
 		return;
-	next = *head;
+
+	current = *head;
 	while (current != NULL)
 	{
-		current = next;
-		next = next->next;
+		next = current->next;
 		free(current);
+		current = next;
 	}
 	*head = NULL;
 }
