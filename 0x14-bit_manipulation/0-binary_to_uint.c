@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * binary_to_uint - translate number to unsigned int.
  * @b: pointer to the string of 0's and 1's
