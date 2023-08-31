@@ -1,37 +1,25 @@
-#include "main.h"
+#include "holberton.h"
 /**
- * _strlen - to get size of string
- * @ptr: pointer to first digit in string
- * Return: size of string
- */
-int _strlen(const char *ptr)
-{
-	int count;
-
-	for (count = 0; ptr[count] != '\0'; count++)
-		;
-	return (count);
-}
-/**
- * binary_to_uint - to convert binary to decimal
- * @b: string
- * Return: decimal number
+ * binary_to_uint - translate number to unsigned int.
+ * @b: pointer to the string of 0's and 1's
+ * Return: an unsigned int number
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int sum = 0;
-	int mult = 1, size = _strlen(b);
+	int i;
+	unsigned int num = 0;
 
-	if (b == NULL)
+	if (!b)
 		return (0);
-	while (size--)
-	{
-		if (b[size] == '1')
-			sum += mult;
-		else if (b[size] >= 'a' && b[size] <= 'z')
-			return (0);
-		mult *= 2;
-	}
 
-	return (sum);
+	for (i = 0; *(b + i) != '\0'; i++)
+	{
+		if (*(b + i)  == '1')
+			num = (num << 1) | 1;/*insert 1 and make displacement*/
+		else if (*(b + i) == '0')
+			num <<= 1; /*only displace*/
+		else
+			return (0);
+	}
+	return (num);
 }
