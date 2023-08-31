@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * flip_bits - returns the differeces about digits between 2 numbers.
  * @n: the input number1
