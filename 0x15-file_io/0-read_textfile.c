@@ -22,9 +22,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	file_descriptor = open(filename, O_RDONLY);
 	if (file_descriptor == -1)
 		return (0);
-	bytes= read(file_descriptor, ch, letters);
-        write(STDOUT_FILENO, ch, bytes);
-	
+	bytes = read(file_descriptor, ch, letters);
+	write(STDOUT_FILENO, ch, bytes);
+
 	close(file_descriptor);
 	free(ch);
 	return (bytes);
