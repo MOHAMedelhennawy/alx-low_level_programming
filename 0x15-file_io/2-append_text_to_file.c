@@ -1,4 +1,10 @@
 #include "main.h"
+/**
+ * append_text_to_file - append text to the end of file
+ * @filename: name of file to be readed
+ * @text_content: the text that will be appended.
+ * Return: 2 success, otherwise 0
+ */
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd, fw, i;
