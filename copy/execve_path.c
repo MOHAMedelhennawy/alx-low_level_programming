@@ -16,19 +16,18 @@
 int execuve_command_with_slash(char **bffer, char *programName, int n,
 char **pathbuf)
 {
-	int itr = 0;
+	int itr = 0, status;
 
 	if (fork() == 0) /* Check for child process */
 	{
 		while (bffer[itr++] != NULL) /* splits the command to strings */
 			bffer[itr] = _strtok(NULL, " ");
-
-		if (execve(bffer[0], bffer, NULL) == -1)
+		if (execve(bffer[0], bffer, environ) == -1)
 			error_message_permission_denied(programName, *bffer, n);
 
 		free(bffer[0]), free(*pathbuf);
 		exit(EXIT_SUCCESS); /* Exit with 0 status */
 	}
-	wait(NULL); /* Make the parent process wait for child process terminate */
-	return (EXIT_SUCCESS);
+	wait(&status); /* Make the parent process wait for child process terminate */
+	return (WEXITSTATUS(status));
 }

@@ -5,7 +5,7 @@
  * @argv: the passed arguments to program.
  * Return: return
  */
-int main(int __attribute__((unused)) argc, char *argv[])
+int main(int __attribute__ ((unused)) argc, char *argv[])
 {
 	size_t len = 0, num = 1, ex = EXIT_SUCCESS;
 	char *buff[] = {NULL}, *pathBuf, *exitBuf;
