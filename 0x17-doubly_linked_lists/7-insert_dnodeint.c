@@ -11,7 +11,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new_node = NULL, *ptr = *h, *ptr2;
 	unsigned int size = 0;
 	/*get the length of list*/
-	while (ptr->next)
+	while (ptr)
 	{
 		ptr = ptr->next;
 		size++;
