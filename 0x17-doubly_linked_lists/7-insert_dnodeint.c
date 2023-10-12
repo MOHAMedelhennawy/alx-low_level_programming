@@ -9,7 +9,7 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *new_node = NULL, *ptr = *h, *ptr2;
-	unsigned int size = 1;
+	unsigned int size = 0;
 	/*get the length of list*/
 	while (ptr->next)
 	{
@@ -24,7 +24,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (new_node);
 	}
 	/*insert node at End*/
-	else if (idx == size && ptr->next == NULL)
+	else if (idx == size)
 	{
 		new_node = add_dnodeint_end(h, n);
 		return (new_node);
