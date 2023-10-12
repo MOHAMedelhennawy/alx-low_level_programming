@@ -10,25 +10,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *new_node = NULL, *ptr = *h, *ptr2;
 	unsigned int size = 0;
-	
-	/*get the length of list*/
+
 	while (ptr)
 	{
 		ptr = ptr->next;
 		size++;
 	}
-
 	if (h == NULL || *h == NULL || idx > size)
 		return (NULL);
-
-	/*insert at Begenning if idx = 0*/
 	if (idx == 0)
 	{
 		new_node = add_dnodeint(h, n);
 		return (new_node);
 	}
-
-	/*insert node at End*/
 	else if (idx == size)
 	{
 		new_node = add_dnodeint_end(h, n);
