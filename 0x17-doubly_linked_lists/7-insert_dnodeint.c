@@ -8,13 +8,13 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *ptr = *h, *new_node, *ptr2;
+	dlistint_t *prev = *h, *new_node, *next;
 	unsigned int siz = 0;
 
 	/*to get the size of list*/
-	while (ptr)
+	while (prev)
 	{
-		ptr = ptr->next;
+		prev = prev->next;
 		siz++;
 	}
 	if (!h || idx > siz)
@@ -33,15 +33,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 
 	/*insert a node in idx postion*/
-	ptr = *h;
+	prev = *h;
 	new_node->n = n;
 	while ((idx--) - 1)
-		ptr = ptr->next;
-	ptr2 = ptr->next;
-	ptr->next = new_node;
-	new_node->prev = ptr;
-	new_node->next = ptr2;
-	ptr2->prev = new_node;
+		prev = prev->next;
+	next = prev->next;
+	prev->next = new_node;
+	new_node->prev = prev;
+	new_node->next = next;
+	next->prev = new_node;
 
 	return (new_node);
 }
