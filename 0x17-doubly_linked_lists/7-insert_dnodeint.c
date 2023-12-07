@@ -28,6 +28,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		{
 			slow = slow->next;
 			fast = slow->next;
+			if (slow == NULL)
+				return (NULL);
 		}
 
 		new_node->next = fast;
