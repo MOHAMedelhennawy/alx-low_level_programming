@@ -37,9 +37,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (new_node);
 	}
 	/*insert a node in idx postion*/
-	new_node->n = n;
 	ptr = *h;
-	while (idx-- > 1 && ptr)
+	new_node->n = n;
+	while ((idx--) - 1 && ptr)
 		ptr = ptr->next;
 	ptr2 = ptr->next;
 	ptr->next = new_node;
