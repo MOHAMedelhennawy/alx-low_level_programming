@@ -11,13 +11,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *prev = *h, *new_node, *next;
 	unsigned int siz = 0;
 
+	/*create a new node to insert*/
+	new_node = malloc(sizeof(dlistint_t));
 	/*to get the size of list*/
 	while (prev)
 	{
 		prev = prev->next;
 		siz++;
 	}
-	if (!h || idx > siz)
+	if (!h || idx > siz || !new_node)
 		return (NULL);
 
 	/*insert at beginning*/
@@ -27,10 +29,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	else if (idx == siz)
 		return (add_dnodeint_end(h, n));
 
-	/*create a new node to insert*/
-	new_node = malloc(sizeof(dlistint_t));
-	if (!new_node)
-		return (NULL);
+
 
 	/*insert a node in idx postion*/
 	prev = *h;
