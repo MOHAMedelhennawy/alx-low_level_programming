@@ -1,18 +1,22 @@
 #include "lists.h"
 /**
- * dlistint_len - to print number of elements
- *@h: header of list
- * Return: the size of list
+ * dlistint_len - to get the size of list.
+ * @h: head of linked list.
+ * Return: size of list.
  */
 size_t dlistint_len(const dlistint_t *h)
 {
 	const dlistint_t *ptr = h;
-	size_t siz = 0;
+	size_t size = 0;
+
+	if (!h)
+		return (0);
 
 	while (ptr)
 	{
-		siz++;
+		size++;
 		ptr = ptr->next;
 	}
-	return (siz);
+
+	return (size);
 }
