@@ -13,7 +13,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	/*create a new node to insert*/
 	new_node = malloc(sizeof(dlistint_t));
-	
+
 	/*to get the size of list*/
 	while (current)
 	{
@@ -35,6 +35,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node->n = n;
 	while ((idx--) - 1)
 		current = current->next;
+
 	next = current->next;
 	current->next = new_node;
 	new_node->prev = current;
