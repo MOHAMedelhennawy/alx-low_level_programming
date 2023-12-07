@@ -27,11 +27,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	else if (idx == siz)
 		return (add_dnodeint_end(h, n));
 	/*check if idx is out of range*/
+	if (idx > siz)
+		return (NULL);
 
 	while ((idx--) - 1)
 	{
 		slow = slow->next;
 		fast = slow->next;
+		if (fast == NULL || slow == NULL)
+			return (NULL);
 	}
 
 	new_node->n = n;
