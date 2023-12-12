@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	char op = argv[2];
+	char op = *argv[2];
 	int num1 = atoi(argv[1]), num2 = atoi(argv[3]), result;
 	int (*ptr)(int, int);
 
