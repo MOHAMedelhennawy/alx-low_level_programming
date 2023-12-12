@@ -1,18 +1,15 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "3-calc.h"
 /**
- * main - Entry point
- * @argc: the number of the parameters
- * @argv: the parameters in the case the number to be calculated.
-(* a blank line
-* Description: this program is the enttry point for a calculator)?
-(* section header: 3-calc.h)*
-* Return: 0 in success
-*/
+ * main - program that perfroms simple operations
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: Always 0 (Success)
+ */
 int main(int argc, char *argv[])
 {
-	int a, b, result;
+	char op = argv[2];
+	int num1 = atoi(argv[1]), num2 = atoi(argv[3]), result;
 	int (*ptr)(int, int);
 
 	if (argc != 4)
@@ -21,24 +18,22 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (argv[2][1] != '\0')
-	{
-		puts("Error");
-		exit(99);
-	}
-
 	ptr = get_op_func(argv[2]);
-	if (ptr == NULL)
+	if (!ptr)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
+	if ((op == '/' || op == '%') && num2 == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
 
-	result = ptr(a, b);
+	result = ptr(num1, num2);
 	printf("%d\n", result);
 
 	return (0);
+
 }
