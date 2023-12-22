@@ -4,20 +4,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
     unsigned long int index;
     hash_node_t *new_item, *current_item;
 
-    if (!ht)
-        return (0);
-
     new_item = creat_new_item(key, value);
     if (strcmp(key, "") || !ht || !new_item)
         return (0);
 
     index = key_index((const unsigned char *)key, ht->size);
+    /*If array[index] is empty*/
     if (ht->array[index] == NULL)
     {
         ht->array[index] = new_item;
         return (1);
     }
 
+    /*If current_item is actuly exist raplace his value*/
     current_item = ht->array[index];
 	if (strcmp(current_item->key, key) == 0)
     {
@@ -35,6 +34,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         return (1);
     }
 
+    /*insert at beginning*/
     new_item->next = ht->array[index];
     ht->array[index] = new_item;
     return (1);
