@@ -35,8 +35,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			free(new_item);
 			return (0);
 		}
-		free(new_item->key);
-		free(new_item->value);
+
 		free(new_item);
 		return (1);
 	}
