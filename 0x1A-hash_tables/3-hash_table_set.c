@@ -26,7 +26,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
             free(new_item);
             return (0);
         }
-
+        free(new_item->key);
+        free(new_item->value);
+        free(new_item);
         return (1);
     }
 
@@ -60,8 +62,8 @@ hash_node_t *creat_new_item(const char *key, const char *value)
     new_item->next = NULL;
  
 
-    strdup(new_item->key, key);
-    strdup(new_item->value, value);
+    new_item->key = strdup(key);
+    new_item->value = strdup(value);
 
     return new_item;
 }
