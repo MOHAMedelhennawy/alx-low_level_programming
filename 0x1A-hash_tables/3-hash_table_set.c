@@ -49,14 +49,14 @@ hash_node_t *creat_new_item(const char *key, const char *value)
     if (new_item == NULL)
         return NULL;
 
-    new_item->key = (const char *) (malloc(sizeof(key) + 1));
+    new_item->key = (malloc(sizeof(key) + 1));
     new_item->key = strdup(key);
     if (new_item->key == NULL)
     {
         free(new_item);   
         return (NULL);
     }
-    new_item->value = (const char *) (malloc(sizeof(value) + 1));
+    new_item->value = (malloc(sizeof(value) + 1));
     new_item->value = strdup(value);
     if (new_item->value == NULL)
     {
