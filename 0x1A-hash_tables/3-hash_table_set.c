@@ -2,13 +2,13 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
     unsigned long int index;
-    hash_node_t *new_item, *current_new_item, *head;
+    hash_node_t *new_item;
 
     new_item = creat_new_item(key, value);
     if (strcmp(key, "") || !key || !ht || !new_item)
         return (0);
 
-    index = key_index(key, ht->size);
+    index = key_index((const unsigned char *)key, ht->size);
     if (ht->array[index] == NULL)
         ht->array[index] = new_item;
     
@@ -17,6 +17,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
         new_item->next = ht->array[index];
         ht->array[index] = new_item;
     }
+
+    return (1);
 
 }
 
@@ -27,7 +29,6 @@ hash_node_t *creat_new_item(const char *key, const char *value)
     new_item = (hash_node_t *) malloc(sizeof(hash_node_t));
     if (new_item == NULL)
     {
-        // free() // Free all list, then you should build free function
         return NULL;
     }
     new_item->key = (char *) (malloc(sizeof(key) + 1));
