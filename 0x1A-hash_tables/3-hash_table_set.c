@@ -20,26 +20,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
     current_item = ht->array[index];
 	if (strcmp(current_item->key, key) == 0)
-    {
-        current_item->value = strdup(value);
-        if (current_item->value == NULL)
-        {
-            free(new_item->key);
-            free(new_item->value);
-            free(new_item);
-            return (0);
-        }
-        free(new_item->key);
-        free(new_item->value);
-        free(new_item);
-        return (1);
+	{
+		current_item->value = strdup(value);
+		if (current_item->value == NULL)
+			return (0);
+		free(new_item->key);
+		free(new_item->value);
+		free(new_item);
+		return (1);
     }
+	new_item->next = current_item;
+	ht->array[index] = new_item;
+	return (1);
 
-    new_item->next = ht->array[index];
-    ht->array[index] = new_item;
-    return (1);
-
-}
+    }
 
 hash_node_t *creat_new_item(const char *key, const char *value)
 {
