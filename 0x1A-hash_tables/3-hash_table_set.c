@@ -4,6 +4,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
     unsigned long int index;
     hash_node_t *new_item, *current_item;
 
+    if (!ht)
+        return (0);
+
     new_item = creat_new_item(key, value);
     if (strcmp(key, "") || !ht || !new_item)
         return (0);
@@ -47,12 +50,14 @@ hash_node_t *creat_new_item(const char *key, const char *value)
         return NULL;
 
     new_item->key = (char *) (malloc(sizeof(key) + 1));
+    new_item->key = strdup(key);
     if (new_item->key == NULL)
     {
         free(new_item);   
         return (NULL);
     }
     new_item->value = (char *) (malloc(sizeof(value) + 1));
+    new_item->value = strdup(value);
     if (new_item->value == NULL)
     {
         free(new_item);
@@ -61,9 +66,5 @@ hash_node_t *creat_new_item(const char *key, const char *value)
     }
     new_item->next = NULL;
  
-
-    new_item->key = strdup(key);
-    new_item->value = strdup(value);
-
     return (new_item);
 }
