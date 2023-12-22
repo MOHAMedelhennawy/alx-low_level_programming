@@ -1,0 +1,42 @@
+#include "hash_tables.h"
+int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+{
+    unsigned long int index;
+    hash_node_t *new_item, *current_new_item, *head;
+
+    new_item = creat_new_item(key, value);
+    if (strcmp(key, "") || !key || !ht || !new_item)
+        return (0);
+
+    index = key_index(key, ht->size);
+    if (ht->array[index] == NULL)
+        ht->array[index] = new_item;
+    
+    else
+    {
+        new_item->next = ht->array[index];
+        ht->array[index] = new_item;
+    }
+
+}
+
+hash_node_t *creat_new_item(const char *key, const char *value)
+{
+    hash_node_t *new_item;
+
+    new_item = (hash_node_t *) malloc(sizeof(hash_node_t));
+    if (new_item == NULL)
+    {
+        // free() // Free all list, then you should build free function
+        return NULL;
+    }
+    new_item->key = (char *) (malloc(sizeof(key) + 1));
+    new_item->value = (char *) (malloc(sizeof(value) + 1));
+    new_item->next = NULL;
+ 
+
+    strcpy(new_item->key, key);
+    strcpy(new_item->value, value);
+
+    return new_item;
+}
