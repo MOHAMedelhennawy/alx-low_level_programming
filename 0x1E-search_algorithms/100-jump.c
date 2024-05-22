@@ -15,6 +15,9 @@ int jump_search(int *array, size_t size, int value)
 	int left = 0, righ = 0;
 	int i, steps = sqrt(size);
 
+	if (!array || size == 0)
+		return (-1);
+
 	while (righ <= (int)size - 1 && array[righ] < value)
 	{
 		left = righ;
