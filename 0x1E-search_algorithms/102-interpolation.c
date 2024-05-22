@@ -1,6 +1,7 @@
 #include "search_algos.h"
 /**
- * interpolation_search - function that searches for a value in a sorted array of integers.
+ * interpolation_search - function that searches for
+ * a value in a sorted array of integers.
  * @array: a pointer to the first element of the array to search in.
  * @size: the number of elements in array.
  * @value: is the value to search for.
@@ -16,13 +17,18 @@ int interpolation_search(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 
-	while (value >= array[low] && value <= array[high] && low <= high)
+	while (value >= array[low] && value <= array[high] &&  array[low] < array[high])
 	{
-		pos = low + (((double)(high - low) / (array[high] - array[low])) * (value - array[low]));
+		pos = low + (((double)(high - low) / (array[high]
+			- array[low])) * (value - array[low]));
+
 		printf("Value checked array[%ld] = [%d]\n", pos, array[pos]);
-		if (array[pos] == value) return pos;
-		else if (array[pos] < value) low = pos + 1;
-		else high = pos - 1;
+		if (array[pos] == value)
+			return ((int)pos);
+		else if (array[pos] < value)
+			low = pos + 1;
+		else
+			high = pos - 1;
 	}
 
 	printf("Value checked array[%ld] is out of range\n", pos);
