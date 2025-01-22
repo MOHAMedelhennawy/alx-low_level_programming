@@ -1,17 +1,19 @@
 #include "lists.h"
 /**
  * _strlen - to get length of a string
- * @s: origin string
+ * @str: origin string
  * Return: length of string
  */
-unsigned int _strlen(const char *s)
+unsigned int _strlen(const char *str)
 {
-	unsigned int len = 0;
+	unsigned int count = 0;
 
-	while (*(s + len))
-		len++;
-	return (len);
+	while (*(str++))
+		count++;
+
+	return (count);
 }
+
 /**
  * add_node_end - adds a node at the end of a list.
  * @head: head of nodes address
@@ -20,33 +22,29 @@ unsigned int _strlen(const char *s)
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *ptr, *new;
+	list_t *tmp, *ptr;
 
-	ptr = *head;
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
+	tmp = (list_t *)malloc(sizeof(list_t));
+	if (!tmp)
 		return (NULL);
 
-	new->str = strdup(str);
-	if (str == NULL)
-	{
-		free(new);
-		return (NULL);
-	}
-	new->len = _strlen(str);
-	new->next = NULL;
+	tmp->str = strdup(str);
+	tmp->len = _strlen(str);
+	tmp->next = NULL;
 
-	if (*head == NULL)
+	if (!*head)
 	{
-		*head = new;
-		return (new);
-	}
+		*head = tmp;
+	} else
+	{
 
-	while (ptr->next != NULL)
-	{
-		ptr = ptr->next;
+		ptr = *head;
+		while (ptr->next)
+			ptr = ptr->next;
+
+		ptr->next = tmp;
 	}
 
-	ptr->next = new;
-	return (new);
+
+	return (tmp);
 }
