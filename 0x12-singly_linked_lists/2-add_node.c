@@ -1,17 +1,19 @@
 #include "lists.h"
 /**
  * _strlen - to get length of a string
- * @s: origin string
+ * @str: origin string
  * Return: length of string
  */
-unsigned int _strlen(const char *s)
+unsigned int _strlen(const char *str)
 {
-	unsigned int len = 0;
+	unsigned int count = 0;
 
-	while (*(s + len))
-		len++;
-	return (len);
+	while (*(str++))
+		count++;
+
+	return (count);
 }
+
 /**
  * add_node - adds a node.
  * @head: head of nodes address
@@ -20,27 +22,17 @@ unsigned int _strlen(const char *s)
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new;
+	list_t *tmp;
 
-	new = malloc(sizeof(list_t));
-	if (!new)
+	tmp = malloc(sizeof(list_t));
+	if (!tmp)
 		return (NULL);
 
-	new->str = strdup(str);
-	new->len = _strlen(str);
-	if (!str)
-	{
-		free(new);
-		return (NULL);
-	}
+	tmp->str = strdup(str);
+	tmp->len = _strlen(str);
+	tmp->next = *head;
 
-	if (head == NULL)
-	{
-		*head = new;
-		return (new);
-	}
-	new->next = *head;
-	*head = new;
+	*head = tmp;
 
-	return (new);
+	return (tmp);
 }
