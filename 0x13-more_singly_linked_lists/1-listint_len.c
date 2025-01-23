@@ -6,19 +6,17 @@
  */
 size_t listint_len(const listint_t *h)
 {
-	size_t size = 0;
+	size_t count = 0;
 	const listint_t *ptr = h;
 
 	if (!ptr)
-	{
 		return (0);
-	}
 
 	while (ptr)
 	{
+		count++;
 		ptr = ptr->next;
-		size++;
 	}
 
-	return (size);
+	return (count);
 }
