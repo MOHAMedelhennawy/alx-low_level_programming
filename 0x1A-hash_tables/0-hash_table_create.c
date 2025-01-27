@@ -9,24 +9,19 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	unsigned long int i;
-	hash_table_t *my_table;
+	hash_table_t *hash_table = (hash_table_t *)malloc(sizeof(hash_table_t));
 
-	/*Creates a HashTaple from struct*/
-	my_table = (hash_table_t *)malloc(sizeof(hash_table_t));
-	if (my_table == NULL)
+	if (!hash_table)
 		return (NULL);
 
+	hash_table->size = size;
+	hash_table->array = (hash_node_t **)calloc(size, sizeof(hash_node_t *));
 
-	my_table->size = size;
-	/*Creates a array of size of type hash_node_t*/
-	my_table->array = (hash_node_t **)calloc(size, sizeof(hash_node_t *));
-	if (my_table->array == NULL)
+	if (!hash_table->array)
 		return (NULL);
 
-	/*initialization all array by NULL*/
-	for (i = 0; i < size; i++)
-		my_table->array[i] = NULL;
+	while (size--)
+		hash_table->array[size] = NULL;
 
-	return (my_table);
+	return (hash_table);
 }
